@@ -1,0 +1,140 @@
+:root {
+  --BlueMainBackground: hsl(233, 47%, 7%);
+  --BlueCardBackground: hsl(244, 38%, 16%);
+  --SoftVioletAccent: hsl(277, 64%, 61%);
+  --WhiteMainHeading: hsl(0, 0%, 100%);
+  --WhiteMainParagraph: hsla(0, 0%, 100%, 0.75);
+  --WhiteStatHeadings: hsla(0, 0%, 100%, 0.6);
+}
+
+* {
+  font-family: "Inter", sans-serif;
+  /* color: var(--WhiteMainParagraph); */
+}
+
+html {
+  min-height: 100vh;
+}
+
+html,
+body {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--BlueMainBackground);
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  align-self: center;
+  background-color: var(--BlueCardBackground);
+  border-radius: 1rem;
+  /* height: fit-content; */
+  max-width: 1080px;
+}
+
+.main {
+  padding: 5rem;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto auto;
+}
+
+h1 {
+  font-family: "Lexend Deca", "Inter", sans-serif;
+  color: var(--WhiteMainHeading);
+  margin: 0;
+}
+
+.highlight {
+  font-family: "Lexend Deca", "Inter", sans-serif;
+  color: var(--SoftVioletAccent);
+}
+
+ul {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  padding: 0;
+  margin: 0;
+  align-items: end;
+}
+
+ul li {
+  text-transform: uppercase;
+  color: var(--WhiteStatHeadings);
+  font-size: 15px;
+  margin: 0 3rem 0 0;
+}
+
+ul li:last-child {
+    margin: 0;
+}
+
+ul li strong {
+  color: var(--WhiteMainHeading);
+  font-size: 22px;
+  font-family: "Lexend Deca", "Inter", sans-serif;
+}
+
+p {
+  color: var(--WhiteMainParagraph);
+  font-size: 15px;
+}
+
+.side-img {
+  background-color: var(--SoftVioletAccent);
+  object-fit: cover;
+  overflow: hidden;
+  border-radius: 0 1rem 1rem 0;
+}
+
+img {
+  height: 100%;
+  mix-blend-mode: multiply;
+  /* object-fit: cover; */
+  /* overflow: hidden; */
+  /* border-radius: 0 1rem 1rem 0; */
+}
+
+@media (max-width: 800px) {
+  main {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
+    max-width: 350px;
+    height: auto;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .main {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    padding: 2rem;
+  }
+
+  .side-img {
+    grid-row-start: 1;
+    grid-row-end: 2;
+    border-radius: 1rem 1rem 0 0;
+  }
+
+  img {
+    height: auto;
+    width: 100%;
+    height: 100%;
+  }
+
+  ul {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    align-items: center;
+  }
+
+  ul li {
+    margin: 5px;
+  }
+}
